@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.TOD" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">#F4FAF8</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">#F4FAF8</item>
+    </style>
+</resources>

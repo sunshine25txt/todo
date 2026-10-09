@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>TOD — Android app preview</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="phone" id="phone">
+      <div class="status">
+        <span id="statusTime">9:30</span>
+        <span class="status-icons">●●● 📶</span>
+      </div>
+
+      <section class="screen" id="splash">
+        <div class="blobs"></div>
+        <div class="splash-art" aria-hidden="true">
+          <svg viewBox="0 0 280 170" width="260" height="160">
+            <circle cx="78" cy="42" r="16" fill="#2C3A39"/>
+            <rect x="58" y="58" width="40" height="46" rx="10" fill="#4EC8C6"/>
+            <rect x="60" y="118" width="16" height="38" rx="6" fill="#2C3A39"/>
+            <rect x="82" y="118" width="16" height="38" rx="6" fill="#2C3A39"/>
+            <line x1="98" y1="70" x2="128" y2="52" stroke="#4EC8C6" stroke-width="8" stroke-linecap="round"/>
+            <rect x="140" y="28" width="72" height="90" rx="10" fill="#fff" stroke="#E8F4F2"/>
+            <rect x="152" y="44" width="48" height="6" rx="3" fill="#D5E6E3"/>
+            <rect x="152" y="58" width="48" height="6" rx="3" fill="#D5E6E3"/>
+            <rect x="152" y="72" width="48" height="6" rx="3" fill="#D5E6E3"/>
+            <rect x="152" y="86" width="28" height="6" rx="3" fill="#D5E6E3"/>
+            <circle cx="208" cy="32" r="8" fill="#4EC8C6"/>
+            <rect x="196" y="62" width="72" height="90" rx="10" fill="#fff" stroke="#E8F4F2"/>
+            <rect x="208" y="78" width="48" height="6" rx="3" fill="#D5E6E3"/>
+            <rect x="208" y="92" width="48" height="6" rx="3" fill="#D5E6E3"/>
+            <rect x="208" y="106" width="48" height="6" rx="3" fill="#D5E6E3"/>
+            <circle cx="264" cy="66" r="8" fill="#4EC8C6"/>
+          </svg>
+        </div>
+        <h1>Gets things with TODs</h1>
+        <p class="lede">Lorem ipsum dolor sit amet consectetur. Eget sit nec et euismod. Consequat nisl etiam sit interdum tristique ut eget sed.</p>
+        <button class="cta" data-go="register">Get Started</button>
+      </section>
+
+      <section class="screen hidden" id="register">
+        <div class="blobs"></div>
+        <div class="form-wrap">
+          <h1>Welcome to Onboard!</h1>
+          <p class="lede">Let’s help to meet up your tasks.</p>
+          <input id="regName" placeholder="Enter your full name" />
+          <input id="regEmail" type="email" placeholder="Enter your Email" />
+          <input id="regPass" type="password" placeholder="Enter Password" />
+          <input id="regConfirm" type="password" placeholder="Confirm password" />
+          <p class="error" id="regError"></p>
+          <button class="cta" id="registerBtn">Register</button>
+          <p class="switch">Already have an account ? <a data-go="login">Sign In</a></p>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="login">
+        <div class="blobs"></div>
+        <div class="form-wrap">
+          <h1>Welcome back</h1>
+          <div class="login-art">
+            <svg viewBox="0 0 220 140" width="200" height="130">
+              <circle cx="80" cy="36" r="12" fill="#3A4A48"/>
+              <rect x="62" y="50" width="36" height="42" rx="10" fill="#5B9BD5"/>
+              <rect x="66" y="100" width="12" height="28" rx="5" fill="#2C3A39"/>
+              <rect x="86" y="100" width="12" height="28" rx="5" fill="#2C3A39"/>
+              <ellipse cx="136" cy="28" rx="22" ry="16" fill="#2A3332"/>
+              <circle cx="136" cy="32" r="14" fill="#3A4A48"/>
+              <rect x="112" y="46" width="48" height="54" rx="14" fill="#E56B6F"/>
+              <rect x="120" y="108" width="14" height="24" rx="5" fill="#2C3A39"/>
+              <rect x="140" y="108" width="14" height="24" rx="5" fill="#2C3A39"/>
+              <rect x="58" y="66" width="30" height="22" rx="4" fill="#4EC8C6"/>
+              <rect x="62" y="70" width="22" height="14" rx="2" fill="#fff"/>
+            </svg>
+          </div>
+          <input id="loginEmail" type="email" placeholder="Enter your Email" />
+          <input id="loginPass" type="password" placeholder="Enter Password" />
+          <p class="forgot"><a id="forgotLink">Forget password ?</a></p>
+          <p class="error" id="loginError"></p>
+          <button class="cta" id="loginBtn">Login</button>
+          <p class="switch">Don’t have an account ? <a data-go="register">Sign Up</a></p>
+        </div>
+      </section>
+
+      <section class="screen hidden" id="dashboard">
+        <header class="dash-header">
+          <div class="blobs light"></div>
+          <div class="avatar">JG</div>
+          <h2 id="welcomeName">Welcome Jeegar goyani</h2>
+          <button class="signout" id="signOut">Sign out</button>
+        </header>
+        <p class="greeting" id="greeting">Good Afternoon</p>
+        <div class="clock-wrap">
+          <canvas id="clock" width="180" height="180"></canvas>
+        </div>
+        <h3 class="task-title">Task list</h3>
+        <div class="task-card">
+          <div class="task-head">
+            <span>Daily Task</span>
+            <button class="add" id="addTask" aria-label="Add task">+</button>
+          </div>
+          <ul id="taskList"></ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <h3 id="modalTitle">Add daily task</h3>
+      <input id="modalInput" />
+      <input id="modalInput2" class="hidden" type="password" />
+      <p class="error" id="modalError"></p>
+      <div class="modal-actions">
+        <button class="ghost" id="modalCancel">Cancel</button>
+        <button class="cta small" id="modalOk">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
