@@ -67,13 +67,13 @@ fun RegisterScreen(
                 Text(error!!, color = androidx.compose.ui.graphics.Color(0xFFD64545), fontSize = 13.sp)
             }
             Spacer(Modifier.height(28.dp))
-            TodButton("Register") {
+            TodButton("Register", onClick = {
                 error = when {
                     password != confirm -> "Passwords do not match."
                     else -> store.register(name, email, password)
                 }
                 if (error == null) onRegistered()
-            }
+            })
             Spacer(Modifier.height(18.dp))
             Row(horizontalArrangement = Arrangement.Center) {
                 Text("Already have an account ? ", color = Muted, fontSize = 13.sp)
