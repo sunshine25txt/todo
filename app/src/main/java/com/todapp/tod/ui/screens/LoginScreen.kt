@@ -75,10 +75,10 @@ fun LoginScreen(
                 Text(error!!, color = androidx.compose.ui.graphics.Color(0xFFD64545), fontSize = 13.sp)
             }
             Spacer(Modifier.height(16.dp))
-            TodButton("Login") {
+            TodButton("Login", onClick = {
                 error = store.login(email, password)
                 if (error == null) onLoggedIn()
-            }
+            })
             Spacer(Modifier.height(18.dp))
             Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
                 Text("Don’t have an account ? ", color = Muted, fontSize = 13.sp)
